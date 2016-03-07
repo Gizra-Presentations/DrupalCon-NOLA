@@ -268,11 +268,12 @@ viewKids kids =
 				<section>
 					<pre>
 						<code class="elm" data-trim>
+
 type alias Model =
-	{ age  : Int
-	, kids : Int
-	, name : String
-	}
+  { age  : Int
+  , kids : Int
+  , name : String
+  }
 
 initialModel : Model
 initialModel =
@@ -307,7 +308,22 @@ initialModel =
 					</pre>
 				</section>
 
-				<!-- Kids type view -->
+				<!-- Kids type view before change -->
+				<section>
+					<pre>
+						<code class="elm" data-trim>
+viewAge : Int -> Html
+viewAge age =
+  div [] [ text <| "Age: " ++ (toString age) ]
+
+viewKids : Int -> Html
+viewKids kids =
+  div [] [ text <| "Kids num: " ++ (toString kids) ]
+						</code>
+					</pre>
+				</section>
+
+				<!-- Kids type view after change -->
 				<section>
 					<pre>
 						<code class="elm" data-trim>
@@ -320,7 +336,7 @@ viewKids kids =
   let
     (Kids val) = kids
   in
-  div [] [ text <| "Kids num: " ++ (toString val) ]
+    div [] [ text <| "Kids num: " ++ (toString val) ]
 						</code>
 					</pre>
 				</section>
@@ -334,6 +350,52 @@ viewKids kids =
 				<!-- Error in Atom -->
 				<section>
 					<img src="https://cloud.githubusercontent.com/assets/125707/13567992/4b8b10f4-e467-11e5-8403-2eed4c375d18.jpg" class="stretch" />
+				</section>
+
+				<!-- Update before change -->
+				<section>
+					<pre>
+						<code class="elm" data-trim>
+viewAge : Int -> Html
+viewAge age =
+  div [] [ text <| "Age: " ++ (toString age) ]
+
+viewKids : Kids -> Html
+viewKids kids =
+  let
+    (Kids val) = kids
+  in
+    div [] [ text <| "Kids num: " ++ (toString val) ]
+						</code>
+					</pre>
+				</section>
+
+				<!-- Update after change -->
+				<section>
+					<pre>
+						<code class="elm" data-trim>
+update : Action -> Model -> (Model, Effects Action)
+update action model =
+  case action of
+    Decrement ->
+      let
+        (Kids val) = model.kids
+        kids' = Kids (val - 1)
+      in
+        ( { model | kids = kids' }
+        , Effects.none
+        )
+
+    Increment ->
+      let
+        (Kids val) = model.kids
+        kids' = Kids (val + 1)
+      in
+        ( { model | kids = kids' }
+        , Effects.none
+        )
+						</code>
+					</pre>
 				</section>
 
 
