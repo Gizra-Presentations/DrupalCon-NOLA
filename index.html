@@ -393,6 +393,70 @@ update action model =
 					</pre>
 				</section>
 
+				<section>
+					<h3>Business logic from the Data level</h3>
+					<img src="https://cloud.githubusercontent.com/assets/125707/13569416/ab1d916e-e470-11e5-8e4f-efdc00cba923.jpg" alt="" />
+				</section>
+
+				<!-- Limit on kids -->
+				<section data-background-iframe="http://gfycat.com/ifr/BossyExemplaryIndianpalmsquirrel">
+				</section>
+
+				<!-- Before limit update change -->
+				<section>
+					<pre>
+						<code class="elm" data-trim>
+update : Action -> Model -> (Model, Effects Action)
+update action model =
+  case action of
+    Decrement ->
+      let
+        (Kids val) = model.kids
+        kids' = Kids (val - 1)
+      in
+        ( { model | kids = kids' }
+        , Effects.none
+        )
+
+    Increment ->
+      let
+        (Kids val) = model.kids
+        kids' = Kids (val + 1)
+      in
+        ( { model | kids = kids' }
+        , Effects.none
+        )
+						</code>
+					</pre>
+				</section>
+
+				<!-- After limit update change -->
+				<section>
+					<pre>
+						<code class="elm" data-trim>
+update : Action -> Model -> (Model, Effects Action)
+update action model =
+  case action of
+    Decrement ->
+      let
+        (Kids val) = model.kids
+        kids' = if val < 1 then Kids 0 else Kids (val - 1)
+      in
+        ( { model | kids = kids' }
+        , Effects.none
+        )
+
+    Increment ->
+      let
+        (Kids val) = model.kids
+        kids' = if val > 4 then Kids 5 else Kids (val + 1)
+      in
+        ( { model | kids = kids' }
+        , Effects.none
+        )
+						</code>
+					</pre>
+				</section>
 
 				<!-- Last slide -->
 				<section data-background="https://cloud.githubusercontent.com/assets/125707/13070800/cf27ec14-d497-11e5-82e3-7cb9c73fe6be.jpg" class="present">
