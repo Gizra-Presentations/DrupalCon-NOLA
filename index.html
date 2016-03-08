@@ -70,7 +70,7 @@
 
 				<!-- Define success -->
 				<section>
-					<h2>Setting Expectations // Common language</h2>
+					<h4>Setting Expectations // Common language</h4>
 				</section>
 
 				<!-- The Gizra Way -->
@@ -208,6 +208,37 @@ viewKids kids =
 					<h3>Compile Error Vs Runtime Error</h3>
 				</section>
 
+				<section>
+					<h2>Types 101</h2>
+				</section>
+
+				<!-- Bool type -->
+				<section>
+					<pre>
+						<code class="elm" data-trim>
+type Bool = False | True
+						</code>
+					</pre>
+				</section>
+
+				<!-- Vehicle type -->
+				<section>
+					<pre>
+						<code class="elm" data-trim>
+type Vehicle = Boat | Plane | Car Int
+
+type alias Model =
+  { name    : String
+  , vehicle : Vehicle
+  }
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h2>Type Safety</h2>
+				</section>
+
 				<!-- Kids & Name both Int -->
 				<section>
 					<pre>
@@ -283,7 +314,7 @@ viewKids kids =
 
 				<!-- Complier error -->
 				<section>
-					<img src="https://cloud.githubusercontent.com/assets/125707/13567978/2b3bf3ea-e467-11e5-94f0-5b8ebfe69bbc.jpg" class="stretch" />
+					<img src="https://cloud.githubusercontent.com/assets/125707/13596397/f35f717c-e51a-11e5-93c3-db3c7a0f7ad2.jpg" class="stretch" />
 				</section>
 
 				<!-- Error in Atom -->
