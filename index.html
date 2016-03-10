@@ -63,10 +63,31 @@
 						</span>
 						<span>// @amitaibu</span>
 					</span>
+
+					<aside class="notes" data-markdown>
+						Twitter
+					</aside>
+				</section>
+
+				<section>
+					<h3>Elm // Elm Architecture</h3>
+					<aside class="notes" data-markdown>
+						* App flow
+						* Components hierarchy
+						* Best practices
+					</aside>
+				</section>
+
+				<section>
+					Model -> Update -> View
 				</section>
 
 				<!-- Elm app -->
 				<section data-background-iframe="http://gfycat.com/ifr/OfficialNeighboringGalapagoshawk">
+					<aside class="notes" data-markdown>
+* לא נכונה מבחינה ביוגרפית, אבל נכונה מבחינה טכנית
+* How to think Elm
+					</aside>
 				</section>
 
 				<section>
@@ -93,7 +114,6 @@ initialModel =
   , name = "Amitai"
   }
 
-
 init : (Model, Effects Action)
 init =
   ( initialModel
@@ -117,8 +137,17 @@ update action model =
       , Effects.none
       )
 
--- VIEW
+						</code>
+					</pre>
 
+					<aside class="notes" data-markdown>
+						Next: View
+					</aside>
+				</section>
+
+				<section>
+					<pre>
+						<code class="elm" data-trim>
 view : Signal.Address Action -> Model -> Html
 view address model =
   div []
@@ -131,13 +160,20 @@ view address model =
     ]
 
 
+
+
+
+--
 						</code>
 					</pre>
+					<aside class="notes" data-markdown>
+						Next: Clenup the View
+					</aside>
 				</section>
 
 				<section>
 					<pre>
-						<code class="elm">
+						<code class="elm" data-trim>
 view : Signal.Address Action -> Model -> Html
 view address model =
   div []
@@ -162,11 +198,19 @@ viewKids kids =
   div [] [ text <| "Kids num: " ++ (toString kids) ]
 						</code>
 					</pre>
+
+					<aside class="notes" data-markdown>
+Everything in Elm is a function
+					</aside>
 				</section>
 
 				<!-- Age instead of kids -->
 				<section>
 					<img src="https://cloud.githubusercontent.com/assets/125707/13567524/6834a4ca-e464-11e5-971e-27e825b67aff.jpg" alt="" />
+
+					<aside class="notes" data-markdown>
+לא עומד מבחינה כלכלית
+					</aside>
 				</section>
 
 				<section>
@@ -261,6 +305,10 @@ viewKids kids =
 --
 						</code>
 					</pre>
+
+					<aside class="notes" data-markdown>
+						View before change
+					</aside>
 				</section>
 
 				<section>
@@ -277,30 +325,36 @@ viewKids kids =
 				</section>
 
 
-				<!-- Complier error -->
-				<section>
-					<img src="https://cloud.githubusercontent.com/assets/125707/13596397/f35f717c-e51a-11e5-93c3-db3c7a0f7ad2.jpg" class="stretch" />
-				</section>
-
 				<!-- Error in Atom -->
 				<section>
 					<img src="https://cloud.githubusercontent.com/assets/125707/13567992/4b8b10f4-e467-11e5-8403-2eed4c375d18.jpg" class="stretch" />
+
+					<aside class="notes" data-markdown>
+						Next: Kids in update func
+					</aside>
 				</section>
 
 				<!-- Update before change -->
 				<section>
 					<pre>
 						<code class="elm" data-trim>
-viewAge : Int -> Html
-viewAge age =
-  div [] [ text <| "Age: " ++ (toString age) ]
+update : Action -> Model -> (Model, Effects Action)
+update action model =
+  case action of
+    Decrement ->
+      ( { model | kids = model.kids - 1 }
+      , Effects.none
+      )
 
-viewKids : Kids -> Html
-viewKids kids =
-  let
-    (Kids val) = kids
-  in
-    div [] [ text <| "Kids num: " ++ (toString val) ]
+    Increment ->
+      ( { model | kids = model.kids + 1 }
+      , Effects.none
+      )
+
+
+
+
+--
 						</code>
 					</pre>
 				</section>
@@ -340,6 +394,10 @@ update action model =
 
 				<!-- Limit on kids -->
 				<section data-background-iframe="http://gfycat.com/ifr/BossyExemplaryIndianpalmsquirrel">
+
+					<aside class="notes" data-markdown>
+						לטובת בריאות המשפחה לא נוכל לעלות על 5 ילדים
+					</aside>
 				</section>
 
 				<!-- Before limit update change -->
@@ -368,6 +426,10 @@ update action model =
         )
 						</code>
 					</pre>
+
+					<aside class="notes" data-markdown>
+						Unidirectional, we don't have 2 way binding problems
+					</aside>
 				</section>
 
 				<!-- After limit update change -->
@@ -400,6 +462,10 @@ update action model =
 
 				<section>
 					<h3>Buisness Logic requires Testing</h3>
+
+					<aside class="notes" data-markdown>
+						Who enjoys writing unit tests
+					</aside>
 				</section>
 
 				<section>
