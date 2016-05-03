@@ -6,8 +6,8 @@
 
 		<title>Gizra</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="description" content="DrupalCon Nola">
+		<meta name="author" content="Amitai Burstein (amitaibu)">
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -43,6 +43,100 @@
 			<div class="slides">
 
 				<section>
+					<h3>Elm</h3>
+					<aside class="notes" data-markdown>
+						<ul>
+						<li>Functional programming language, with similarity to Haskell</li>
+						<li>Here to fix JS problems</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+          <small>Counter.elm</small>
+          <pre style="width: 100%;"><code data-trim>
+module Counter where
+
+import Html exposing (..)
+import Html.Events exposing (onClick)
+
+-- MODEL
+
+type alias Model = Int
+
+init : Int -> Model
+init count = count
+
+-- UPDATE
+
+type Action = Increment | Decrement
+
+update : Action -> Model -> Model
+update action model =
+  case action of
+    Increment -> model + 1
+    Decrement -> model - 1
+
+-- VIEW
+
+view : Signal.Address Action -> Model -> Html
+view address model =
+  div []
+    [ button [ onClick address Decrement ] [ text "-" ]
+    , div [] [ text (toString model) ]
+    , button [ onClick address Increment ] [ text "+" ]
+    ]
+          </code></pre>
+        </section>
+
+				<section>
+						<div class="">
+							3.11.1
+						</div>
+					 <div class="">
+					 	any liability for death or personal injury resulting from the Developer’s negligence
+					 </div>
+				</section>
+
+				<section>
+					<img src="https://cloud.githubusercontent.com/assets/125707/14980235/f8d5b058-112f-11e6-9227-8f1976ce9512.png" alt="" class="stretch" />
+				</section>
+
+
+				<section>
+					<h3>Elm Architecture</h3>
+				</section>
+
+				<section>
+          <div>
+            <h3>Principle 1: Single source of truth</h3>
+            <small>The state of your whole application is stored in a record tree</small>
+          </div>
+
+					<aside class="notes">
+אם עבדתם עם אנגולר ואם נכוותם מיד תתחילו להנהן.
+עושים אביוז לראוטר
+האופי האסינכורני של גווהסקריפט
+			    </aside>
+        </section>
+
+        <section>
+          <div>
+            <h3>Principle 2: State is read-only</h3>
+            <small>The only way to mutate the state is to emit an action describing what happened</small>
+          </div>
+
+					<aside class="notes">
+ מה שגרם לאנשים לאהוב את אנגולר, כיום גורם להם לשנוא אותו
+next: time travel
+			    </aside>
+        </section>
+
+				<section>
+					Model -> Update -> View
+				</section>
+
+				<section>
 					My wife's great tip on how I should open my presentation is to tell you more about
 					myself, because according to her, it helps create interest
 					in the presentation, which again according to her, is way too technical,
@@ -67,20 +161,7 @@
 					<aside class="notes" data-markdown>
 						Twitter
 					</aside>
-				</section>
-
-				<section>
-					<h3>Elm // Elm Architecture</h3>
-					<aside class="notes" data-markdown>
-						* App flow
-						* Components hierarchy
-						* Best practices
-					</aside>
-				</section>
-
-				<section>
-					Model -> Update -> View
-				</section>
+				</section>				
 
 				<!-- Elm app -->
 				<section data-background-iframe="http://gfycat.com/ifr/OfficialNeighboringGalapagoshawk">
