@@ -161,7 +161,7 @@ next: time travel
 					<aside class="notes" data-markdown>
 						Twitter
 					</aside>
-				</section>				
+				</section>
 
 				<!-- Elm app -->
 				<section data-background-iframe="http://gfycat.com/ifr/OfficialNeighboringGalapagoshawk">
@@ -402,6 +402,16 @@ viewKids kids =
     (Kids val) = kids
   in
     div [] [ text <| "Kids num: " ++ (toString val) ]
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<pre>
+						<code class="elm" data-trim>
+viewKids : Kids -> Html
+viewKids (Kids kids) =
+  div [] [ text <| "Kids num: " ++ (toString val) ]
 						</code>
 					</pre>
 				</section>
