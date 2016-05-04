@@ -606,6 +606,36 @@ update action model =
 				    </aside>
 	       </section>
 
+				 <section>
+ 					<pre>
+ 						<code class="elm" data-trim>
+ decrementActionSuite : Test
+ decrementActionSuite =
+   suite "Decerment action"
+     [ test "zero count" (assertEqual 0 (updateKids Person.Decrement 0))
+     , test "positive count" (assertEqual 0 (updateKids Person.Decrement 1))
+     , test "top limit count" (assertEqual 4 (updateKids Person.Decrement 5))
+     ]
+ 						</code>
+ 					</pre>
+ 				</section>
+
+
+ 				<section>
+ 					<pre>
+ 						<code class="elm" data-trim>
+ suite "Decerment action"
+ 	[ test "negative count" (assertEqual 0 1)
+ 	]
+ 						</code>
+ 					</pre>
+ 				</section>
+
+ 				<!-- Failing tests -->
+ 				<section>
+ 					<img src="https://cloud.githubusercontent.com/assets/125707/13571710/57d5119e-e47f-11e5-939a-c3ad4314aa24.jpg" alt="" />
+ 				</section>
+
 				 <!-- Headless Drupal -->
 				 <section data-background="https://cloud.githubusercontent.com/assets/125707/15009257/1d279dae-11ee-11e6-9f6b-0f1e75820dd3.jpg">
  					<h2 style="background-color: black; opacity: 0.85; padding: 20px;">
@@ -648,9 +678,16 @@ update action model =
 				</section>
 
 				<section data-background-video="http://zippy.gfycat.com/RegularWelltodoEider.webm" data-background-video-loop>
-				 <aside class="notes">
-					 next: interop
-				 </aside>
+				</section>
+
+				<!-- Yesod -->
+				<section>
+					<img src="https://cloud.githubusercontent.com/assets/125707/15009836/78fd76e6-11f1-11e6-9d3a-355b7098ba22.jpg" alt="" class="stretch"/>
+				</section>
+
+				<!-- RESTful response -->
+				<section>
+					<img src="https://cloud.githubusercontent.com/assets/125707/15009945/2c823044-11f2-11e6-9154-f9ef23d92d06.jpg" alt="" />
 				</section>
 
 
