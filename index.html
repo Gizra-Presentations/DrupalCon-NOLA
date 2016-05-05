@@ -42,14 +42,44 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 
+				<section>
+
+				</section>
+
+				<section>
+					My wife's great tip on how I should open my presentation is to tell you more about
+					myself, because according to her, it helps create interest
+					in the presentation, which again according to her, is way too technical,
+					and super boring, and she hardly thinks anyone will come, let alone
+					enjoy it.
+				</section>
+
+
+				<!-- Elm app -->
+				<section data-background-iframe="http://gfycat.com/ifr/OfficialNeighboringGalapagoshawk">
+				</section>
+
+				<!-- About  -->
+				<section data-background="https://cloud.githubusercontent.com/assets/125707/12092123/dd49649a-b303-11e5-9355-e49a3881f5bd.png">
+					<span style="background-color: black; opacity: 0.85; padding: 20px 40px;">
+						<span style="font-family: Abril Fatface; color: #e27058; font-size: 50px;">
+							gizra
+						</span>
+						<span>// @amitaibu</span>
+					</span>
+
+					<aside class="notes" data-markdown>
+						Twitter
+					</aside>
+				</section>
+
 				<section data-background="https://cloud.githubusercontent.com/assets/125707/11417279/6ad89eca-941e-11e5-90af-6c8e4431eb5c.jpg">
-          <div style="background-color: black; opacity: 0.75; padding: 20px;">
+          <div style="background-color: black; opacity: 0.75; padding: 20px; margin-top: -300px;">
             <h2>Elm</h2>
             A different approach to webapps
           </div>
 					<aside class="notes">
-						<li>Functional programming language, with similarity to Haskell</li>
-						<li>Here to fix JS problems</li>
+						Functional programming language, with similarity to Haskell
 			    </aside>
         </section>
 
@@ -89,17 +119,19 @@ view address model =
     , button [ onClick address Increment ] [ text "+" ]
     ]
           </code></pre>
+
+					<aside class="notes">
+						Here to fix JS problems
+			    </aside>
         </section>
 
 				<section>
-						<div class="">
-							3.11.1
-						</div>
-					 <div class="">
-					 	liability for personal injury or death as a result from a developer’s negligence or malpractice
-					 </div>
+			    <small style="text-align: left;">
+						(3.11) liability for personal injury or death as a result from a developer’s negligence or malpractice
+					</small>
 				</section>
 
+				<!-- The jinx -->
 				<section>
 					<img src="https://cloud.githubusercontent.com/assets/125707/14980235/f8d5b058-112f-11e6-9227-8f1976ce9512.png" alt="" class="stretch" />
 				</section>
@@ -136,33 +168,6 @@ next: time travel
 
 				<section>
 					Model -> Update -> View
-				</section>
-
-				<section>
-					My wife's great tip on how I should open my presentation is to tell you more about
-					myself, because according to her, it helps create interest
-					in the presentation, which again according to her, is way too technical,
-					and super boring, and she hardly thinks anyone will come, let alone
-					enjoy it.
-				</section>
-
-
-				<!-- Elm app -->
-				<section data-background-iframe="http://gfycat.com/ifr/OfficialNeighboringGalapagoshawk">
-				</section>
-
-				<!-- About  -->
-				<section data-background="https://cloud.githubusercontent.com/assets/125707/12092123/dd49649a-b303-11e5-9355-e49a3881f5bd.png">
-					<span style="background-color: black; opacity: 0.85; padding: 20px 40px;">
-						<span style="font-family: Abril Fatface; color: #e27058; font-size: 50px;">
-							gizra
-						</span>
-						<span>// @amitaibu</span>
-					</span>
-
-					<aside class="notes" data-markdown>
-						Twitter
-					</aside>
 				</section>
 
 				<!-- Elm app -->
@@ -416,7 +421,7 @@ viewKids (Kids kids) =
   div [] [ text <| "Kids num: " ++ (toString val) ]
 
 
---	
+--
 						</code>
 					</pre>
 				</section>
@@ -426,7 +431,7 @@ viewKids (Kids kids) =
         </section>
 
 				<section data-background="https://cloud.githubusercontent.com/assets/125707/15041043/bcebee7a-12c1-11e6-8d21-4ef42c1a4c65.jpg">
-           <h2 style="background-color: black; opacity: 0.75; padding: 10px;">
+           <h2 style="background-color: black; opacity: 0.75; padding: 10px; margin-top: -300px;">
  						The Compiler
  					</h2>
          </section>
@@ -449,9 +454,6 @@ viewKids (Kids kids) =
 							Next: Kids in update func
  			    </aside>
  				</section>
-
-
-
 
 				<!-- Update before change -->
 				<section>
@@ -509,6 +511,12 @@ update action model =
 				<section>
 					<h3>Business logic from the Data level</h3>
 					<img src="https://cloud.githubusercontent.com/assets/125707/13569416/ab1d916e-e470-11e5-8e4f-efdc00cba923.jpg" alt="" />
+				</section>
+
+				<!-- My life in 40 seconds -->
+				<section>
+					<h4>My life in 40 seconds</h4>
+					<iframe width="853" height="480" src="https://www.youtube.com/embed/liBroOdK1wA?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 				</section>
 
 				<!-- Limit on kids -->
@@ -591,7 +599,7 @@ update action model =
 				</section>
 
 				<section data-background="https://cloud.githubusercontent.com/assets/125707/14984664/8020228e-114c-11e6-9db9-e986cc9f8398.jpg">
-	         <h2 style="background-color: black; opacity: 0.85; padding: 20px;">
+	         <h2 style="background-color: black; opacity: 0.85; padding: 20px; margin-top: -300px;">
 							Unit tests
 						</h2>
 
@@ -633,7 +641,7 @@ update action model =
 
 				 <!-- Headless Drupal -->
 				 <section data-background="https://cloud.githubusercontent.com/assets/125707/15009257/1d279dae-11ee-11e6-9f6b-0f1e75820dd3.jpg">
- 					<h2 style="background-color: black; opacity: 0.85; padding: 20px;">
+ 					<h2 style="background-color: black; opacity: 0.85; padding: 20px; margin-top: -300px;">
  						Headless Drupal
  					</h2>
  					<aside class="notes">
