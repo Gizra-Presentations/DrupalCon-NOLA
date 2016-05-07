@@ -570,9 +570,11 @@ update action model =
 					</aside>
 				</section>
 
+				<!-- Kim Jung Un 1 -->
 				<section data-background="https://cloud.githubusercontent.com/assets/125707/14984664/8020228e-114c-11e6-9db9-e986cc9f8398.jpg">
 				</section>
 
+				<!-- Kim Jung Un 2 -->
 				<section data-background="https://cloud.githubusercontent.com/assets/125707/14984664/8020228e-114c-11e6-9db9-e986cc9f8398.jpg">
 	         <h2 style="background-color: black; opacity: 0.85; padding: 20px; ">
 							Unit tests
@@ -583,6 +585,48 @@ update action model =
 							Who enjoys writing unit tests?
 				    </aside>
 	       </section>
+
+				 <!-- Side Effects -->
+				 <section data-background="https://cloud.githubusercontent.com/assets/125707/11407683/f5085e08-93bc-11e5-8899-0c9f407bf21c.jpeg">
+ 					<div style="background-color: black; opacity: 0.75; padding: 10px;">
+						<h2>Side Effects</h2>
+ 					</div>
+ 					<aside class="notes">
+ 						אז בוא נדבר על אפקטס.
+ 						אלמ היא קופסא שחורה
+ 			    </aside>
+         </section>
+
+         <section>
+           <pre style="width: 100%;"><code data-trim>
+ -- MODEL
+ type alias Model = Int
+
+ -- UPDATE
+ type Action
+   = GetDataFromServer
+   | UpdateDataFromServer Result
+           </code></pre>
+         </section>
+
+         <section>
+           <pre style="width: 100%;"><code data-trim>
+ GetDataFromServer ->
+   ( model, Http.get "https://example.com/api/data" |> Task.map UpdateDataFromServer )
+
+ UpdateDataFromServer result ->
+   case result of
+     Ok val ->
+       ( { model = val } , Effects.none )
+     Err msg ->
+       ( model , Effects.none )
+
+           </code></pre>
+ 					<aside class="notes">
+ 						pure functions
+ 						היא אפשר להתעלם מטעויות
+ 			    </aside>
+         </section>
 
 				 <section>
  					<pre>
@@ -596,22 +640,6 @@ update action model =
      ]
  						</code>
  					</pre>
- 				</section>
-
-
- 				<section>
- 					<pre>
- 						<code class="elm" data-trim>
- suite "Decerment action"
- 	[ test "negative count" (assertEqual 0 1)
- 	]
- 						</code>
- 					</pre>
- 				</section>
-
- 				<!-- Failing tests -->
- 				<section>
- 					<img src="https://cloud.githubusercontent.com/assets/125707/13571710/57d5119e-e47f-11e5-939a-c3ad4314aa24.jpg" alt="" />
  				</section>
 
 				 <!-- Headless Drupal -->
