@@ -628,20 +628,6 @@ update action model =
  			    </aside>
          </section>
 
-				 <section>
- 					<pre>
- 						<code class="elm" data-trim>
- decrementActionSuite : Test
- decrementActionSuite =
-   suite "Decerment action"
-     [ test "zero count" (assertEqual 0 (updateKids Person.Decrement 0))
-     , test "positive count" (assertEqual 0 (updateKids Person.Decrement 1))
-     , test "top limit count" (assertEqual 4 (updateKids Person.Decrement 5))
-     ]
- 						</code>
- 					</pre>
- 				</section>
-
 				 <!-- Headless Drupal -->
 				 <section data-background="https://cloud.githubusercontent.com/assets/125707/15009257/1d279dae-11ee-11e6-9f6b-0f1e75820dd3.jpg">
  					<h2 style="background-color: black; opacity: 0.85; padding: 20px; ">
