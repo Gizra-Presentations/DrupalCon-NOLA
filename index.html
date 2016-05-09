@@ -141,6 +141,13 @@ view address model =
 
 				<section>
 					<h3>Elm Architecture</h3>
+					<aside class="notes" data-markdown>
+						* Set of best practices
+						* How to structure your application
+						* How to connect components
+						* Model -> Update -> View
+						* Consists of a few prinicpels
+					</aside>
 				</section>
 
 				<section>
@@ -149,10 +156,13 @@ view address model =
             <small>The state of your whole application is stored in a record tree</small>
           </div>
 
-					<aside class="notes">
-אם עבדתם עם אנגולר ואם נכוותם מיד תתחילו להנהן.
-עושים אביוז לראוטר
-האופי האסינכורני של גווהסקריפט
+					<aside class="notes" data-markdown>
+						* Saw first time it resonated
+						* Angular 1 - where is your state? Router. Services.
+						* Async nature of JS
+						* Condition of your webapp
+						* In case of bugs, hard to reproduce
+						* Maybe counter intiutive (seperation of concerns) - control webapp
 			    </aside>
         </section>
 
@@ -162,21 +172,22 @@ view address model =
             <small>The only way to mutate the state is to emit an action describing what happened</small>
           </div>
 
-					<aside class="notes">
- מה שגרם לאנשים לאהוב את אנגולר, כיום גורם להם לשנוא אותו
-next: time travel
+					<aside class="notes" data-markdown>
+						* It's 2016. The root of all evil in this worlds. heart worming, positive, non-cynical,
+						  world  - 2 way data binding
+						* Angular 1 site - Save me so many jQuery lines
+						* What made us love it, is what we now hate
+						* If view changes model, chain of actions. Can't control state
 			    </aside>
         </section>
-
-				<section>
-					Model -> Update -> View
-				</section>
 
 				<!-- Elm app -->
 				<section data-background-iframe="http://gfycat.com/ifr/OfficialNeighboringGalapagoshawk">
 					<aside class="notes" data-markdown>
-* לא נכונה מבחינה ביוגרפית, אבל נכונה מבחינה טכנית
-* How to think Elm
+						* Back to our award winning webapp
+						* It's a glorified counter example
+						* How to think elm
+						* Learning curve, but things just make sense
 					</aside>
 				</section>
 
@@ -231,7 +242,9 @@ update action model =
 					</pre>
 
 					<aside class="notes" data-markdown>
-						Next: View
+						* Boiler code
+						* Show the essence
+						* Next: View
 					</aside>
 				</section>
 
@@ -495,9 +508,9 @@ update action model =
 					<img src="https://cloud.githubusercontent.com/assets/125707/13569416/ab1d916e-e470-11e5-8e4f-efdc00cba923.jpg" alt="" />
 				</section>
 
-				<!-- My life in 40 seconds -->
+				<!-- 40 seconds of my life -->
 				<section>
-					<h4>My life in 40 seconds</h4>
+					<h4>40 seconds of my life</h4>
 					<iframe width="853" height="480" src="https://www.youtube.com/embed/liBroOdK1wA?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 				</section>
 
