@@ -244,6 +244,8 @@ update action model =
 					<aside class="notes" data-markdown>
 						* Boiler code
 						* Show the essence
+						* When I click the button nothing will happen
+						* Update is the brain of webapp, here we have logic
 						* Next: View
 					</aside>
 				</section>
@@ -270,7 +272,8 @@ view address model =
 						</code>
 					</pre>
 					<aside class="notes" data-markdown>
-						Next: Clenup the View
+						* Not HTML, but still quite convoluted
+						* Next: Clenup the View
 					</aside>
 				</section>
 
@@ -312,13 +315,19 @@ Everything in Elm is a function
 					<img src="https://cloud.githubusercontent.com/assets/125707/13567524/6834a4ca-e464-11e5-971e-27e825b67aff.jpg" alt="" />
 
 					<aside class="notes" data-markdown>
+						* Oh no! how embarrasing! (show code)
 						* Kids is wrong
-						* לא עומד מבחינה כלכלית
+						* Debug shows model is right
 					</aside>
 				</section>
 
 				<section>
-					<h3>Compile Error Vs Runtime Error</h3>
+					<h3>Compile Error Vs Runtime Mistakes</h3>
+
+					<aside class="notes" data-markdown>
+						* No Runtime errors in Elm
+						* Shift as much runtime mistakes to compile time error
+					</aside>
 				</section>
 
 				<section>
@@ -346,10 +355,21 @@ type alias Model =
   }
 						</code>
 					</pre>
+
+					<aside class="notes" data-markdown>
+						* So rich
+						* Multiple cars
+						* Int wrapped with a Car type
+					</aside>
 				</section>
 
 				<section>
 					<h2>Type Safety</h2>
+
+					<aside class="notes" data-markdown>
+						* Have types in place, helping the compiler in helping us
+						* Preventing mistakes
+					</aside>
 				</section>
 
 				<!-- Kids & Name both Int -->
@@ -473,6 +493,11 @@ update action model =
 --
 						</code>
 					</pre>
+
+					<aside class="notes" data-markdown>
+						* Some code needs to change
+						* Kids is no longer holding just an Int
+					</aside>
 				</section>
 
 				<!-- Update after change -->
@@ -501,24 +526,39 @@ update action model =
         )
 						</code>
 					</pre>
-				</section>
 
-				<section>
-					<h3>Business logic from the Data level</h3>
-					<img src="https://cloud.githubusercontent.com/assets/125707/13569416/ab1d916e-e470-11e5-8e4f-efdc00cba923.jpg" alt="" />
+					<aside class="notes" data-markdown>
+						* Update - The only place for Business logic and change our data
+						* more complicated requiremenets, to put it in context
+						so it won't sound to harsh
+					</aside>
 				</section>
 
 				<!-- 40 seconds of my life -->
 				<section>
 					<h4>40 seconds of my life</h4>
 					<iframe width="853" height="480" src="https://www.youtube.com/embed/liBroOdK1wA?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+
+					<aside class="notes" data-markdown>
+						* Try to notice the sound of the piano in the end, that's one of my favorite parts
+						* I think it's evident what the requiremenet is
+					</aside>
+				</section>
+
+				<section>
+					<h2>Put a limit on Kids</h2>
+
+					<aside class="notes" data-markdown>
+						* Aya - the name of the crying girl, was throwing a fit over the fact the yellow potato head glasses didn't
+						fit her better
+					</aside>
 				</section>
 
 				<!-- Limit on kids -->
 				<section data-background-iframe="http://gfycat.com/ifr/BossyExemplaryIndianpalmsquirrel">
 
 					<aside class="notes" data-markdown>
-						לטובת בריאות המשפחה לא נוכל לעלות על 5 ילדים
+						* Can't go below zero, can go beyond a certain number
 					</aside>
 				</section>
 
