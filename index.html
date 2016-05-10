@@ -61,6 +61,7 @@
 
 
 					<aside class="notes" data-markdown>
+						* Created a webapp in Elm
 						* Idiot, you are only 37
 						* Eventhough biographically incorrect, proceed
 					</aside>
@@ -175,7 +176,7 @@ view address model =
           </div>
 
 					<aside class="notes" data-markdown>
-						* It's 2016. The root of all evil in this worlds. heart worming, positive, non-cynical,
+						* It's 2016. The root of all evil in this world. heart worming, positive, non-cynical,
 						  world  - 2 way data binding
 						* Angular 1 site - Save me so many jQuery lines
 						* What made us love it, is what we now hate
@@ -246,6 +247,7 @@ update action model =
 					<aside class="notes" data-markdown>
 						* Boiler code
 						* Show the essence
+						* What actions/ operations can you do
 						* When I click the button nothing will happen
 						* Update is the brain of webapp, here we have logic
 						* Next: View
@@ -317,8 +319,8 @@ Everything in Elm is a function
 					<img src="https://cloud.githubusercontent.com/assets/125707/13567524/6834a4ca-e464-11e5-971e-27e825b67aff.jpg" alt="" />
 
 					<aside class="notes" data-markdown>
-						* Oh no! how embarrasing! (show code)
-						* Kids is wrong
+						* Oh no! how embarrasing! and infront of such a talented audience
+						* Kids is wrong (show code)
 						* Debug shows model is right
 					</aside>
 				</section>
@@ -329,6 +331,7 @@ Everything in Elm is a function
 					<aside class="notes" data-markdown>
 						* No Runtime errors in Elm
 						* Shift as much runtime mistakes to compile time error
+						* To do that, need to understand types
 					</aside>
 				</section>
 
@@ -394,6 +397,10 @@ initialModel =
   }
 						</code>
 					</pre>
+
+					<aside class="notes" data-markdown>
+						(scroll down)
+					</aside>
 				</section>
 
 				<!-- Kids type -->
@@ -448,6 +455,11 @@ viewKids kids =
     div [] [ text <| "Kids num: " ++ (toString val) ]
 						</code>
 					</pre>
+
+					<aside class="notes" data-markdown>
+						* btw, inferred types
+						* Easier to read
+					</aside>
 				</section>
 
 				<section>
@@ -461,14 +473,19 @@ viewKids (Kids kids) =
 --
 						</code>
 					</pre>
+
+					<aside class="notes" data-markdown>
+						* we can shorten it back
+					</aside>
 				</section>
 
 				 <!-- Error in Atom -->
  				<section>
  					<img src="https://cloud.githubusercontent.com/assets/125707/13567992/4b8b10f4-e467-11e5-8403-2eed4c375d18.jpg" class="stretch" />
 
-					<aside class="notes">
-							Next: Kids in update func
+					<aside class="notes" data-markdown>
+            * Not pushing bad logic to production
+            * Next: Kids in update func
  			    </aside>
  				</section>
 
@@ -530,7 +547,10 @@ update action model =
 					</pre>
 
 					<aside class="notes" data-markdown>
+						* Unwrap
+						* appostrophy
 						* Update - The only place for Business logic and change our data
+						* Easier for bugs
 						* more complicated requiremenets, to put it in context
 						so it won't sound to harsh
 					</aside>
@@ -564,7 +584,8 @@ update action model =
 						* How would you do on Angular1?
 						* Disable html HTML?
 						* Subscribe to model changing and undo it?
-						* Unidirectional, we don't have 2 way binding problems
+						* Unidirectional, we don't have 2 way binding problems - view sends to update, that
+						decides what should change
 					</aside>
 				</section>
 
@@ -656,8 +677,7 @@ update action model =
 						</h2>
 
 						<aside class="notes" data-markdown>
-							* What makes unit tests easy Elm
-							* Time to talk about "Pure functions and side effects"
+							* To understand What makes unit tests easy Elm Time to talk about "Pure functions and side effects"
 						</aside>
 	       </section>
 
@@ -667,6 +687,10 @@ update action model =
 
 					<aside class="notes" data-markdown>
 						* Elm is a black box with no connection to outside world
+						* Http request
+						* Reading URL from address bar
+						* Getting time and date from the browser
+						* These are all effects (or side effects)
 					</aside>
          </section>
 
@@ -702,6 +726,9 @@ update action model =
 
            </code></pre>
 					 <aside class="notes" data-markdown>
+						 * Just a todo for the Elm runtime
+						 * Writing todo: Bourbon Street in New Orleans
+						 * No need to mock the entire world, catch HTTP
 						 * Encourages us to be better developers
 						</aside>
          </section>
@@ -721,6 +748,7 @@ update action model =
 				<section data-background-video="http://zippy.gfycat.com/ClassicSplendidDikkops.webm" data-background-video-loop>
 					<aside class="notes" data-markdown>
 						* Office timewatch
+						* Israeli law
  			    </aside>
 				</section>
 
@@ -733,6 +761,7 @@ update action model =
 
 				 <aside class="notes" data-markdown>
 					 * What helps us decide to transition from Angular, jump over react to Elm.
+					 * Hedley - scaffold Drupal, Angular1, Behat, Travis, Migrate - best practices
 					 * Typical webapp, login, github
 				 </aside>
 				</section>
@@ -766,6 +795,11 @@ update action model =
               <li>Bundle and Deploy to gh-pages</li>
             </ul>
           </div>
+
+					<aside class="notes" data-markdown>
+            * Read elm-lang.org
+            * Generator
+ 				  </aside>
         </section>
 
 				<section>
@@ -786,15 +820,14 @@ update action model =
 				</section>
 
 				<section>
-					<div class="">
-						What about NodeJs?
-					</div>
-					<small>My functional programming journey</small>
+					<h4>My functional programming journey</h4>
+					<small>What about NodeJs?</small>
 
 					<aside class="notes" data-markdown>
 						* I started with Elm
 						* Looked at Symfony as holy grail (decoupled, composition)
-						* Objects immutable, might have state
+						* Objects mutable, might have state
+						* Developer brain gets a kick, you start looking differently
  			    </aside>
 				</section>
 
@@ -804,6 +837,8 @@ update action model =
 
 					<aside class="notes" data-markdown>
 						* For more complex sites with have Drupal and NodeJs as proxy server
+						* No longer enjoy, I know there is something better
+						* Huge learning curve, but you see completely different approach
  			    </aside>
 				</section>
 
